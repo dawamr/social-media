@@ -1,0 +1,15 @@
+extends layout
+
+block content
+ 
+  if registrations.length
+    table.table.table-dark.table-striped.text-center
+      tr
+        th Name
+        th Email
+      each row in registrations
+        tr
+          td= row.name
+          td= row.email
+  else
+    p No registrations yet :(

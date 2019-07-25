@@ -1,0 +1,33 @@
+extends layout
+
+block content
+  -data = data || {}
+  if errors
+      ul
+        for error in errors
+          li= error.msg
+  div.card
+    h3.text-center.mt-3 Subscribe
+    form(action="." method="POST" class="form-registration")
+      div.container
+        label(for="name") Name:
+        input(
+          type="text"
+          id="name"
+          name="name"
+          value=data.name
+          class="form-control"
+          required
+        )
+        br
+        label(for="email") Email:
+        input(
+          type="email"
+          id="email"
+          name="email"
+          value=data.email
+          class="form-control"
+          required
+        )
+        br
+        input(type="submit" value="Submit" onclick="alert('Thanks for subcribed')" class="btn mb-5 btn-primary btn-block")
